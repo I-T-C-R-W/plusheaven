@@ -1,4 +1,4 @@
-# plusheaven
+# plusheaven.eth
 HACK FS 22 - Project
 
 Creators: 
