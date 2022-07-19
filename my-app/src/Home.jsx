@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import styles from "../styles/Home.module.css";
 
 const Home = () => {
   return (
@@ -8,7 +9,7 @@ const Home = () => {
         <div className={styles.nav_links}>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/welcome">Home</Link>
             </li>
             <li>
               <Link to="/cards">Cards</Link>

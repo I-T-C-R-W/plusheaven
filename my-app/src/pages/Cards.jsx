@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
+import styles from "../styles/Home.module.css";
 
 
 const suits = ["diamonds", "clubs", "hearts", "spades"];
@@ -13,7 +14,7 @@ for (const s of suits) {
 }
 
 
-export default function Cards() {
+const Cards = () =>  {
   const [score, setScore] = useState(0);
   const [cards, setCards] = useState([...initCards].sort(() => Math.random() - 0.5));
 
@@ -58,7 +59,7 @@ export default function Cards() {
         <p>score: {score}</p>
         <p>last drawn card</p>
           {drawnCards[drawnCards.length - 2] && (
-            <img
+            <Image
               alt="last drawn card"
               src={`https://tekeye.uk/playing_cards/images/svg_playing_cards/fronts/${
               drawnCards[drawnCards.length - 2]
@@ -67,7 +68,7 @@ export default function Cards() {
           )}
         <p>currently drawrn card</p>
           {drawnCards[drawnCards.length - 1] && (
-            <img
+            <Image
               alt="currently drawn card"
               src={`https://tekeye.uk/playing_cards/images/svg_playing_cards/fronts/${
               drawnCards[drawnCards.length - 1]
@@ -78,3 +79,5 @@ export default function Cards() {
     </div>
   )
 }
+
+export default Cards;
