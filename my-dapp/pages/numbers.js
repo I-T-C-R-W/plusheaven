@@ -1,10 +1,9 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
-import styles from "../styles/Home.module.css";
+import Head from 'next/head'
+import Link from 'next/link'
+import styles from '../styles/Home.module.css';
+import { useEffect, useState } from 'react'
 
-
-const Numbers = () => {
+export default function Numbers() {
   const [num, setNum] = useState(0);
 
   function lowNumber(min, max) {
@@ -49,6 +48,27 @@ const Numbers = () => {
         <link rel="icon" href=""/>
       </Head>
       <div className={styles.body}>
+      <div className={styles.nav}>
+        <div className={styles.nav_links}>
+          <ul>
+            <li>
+              <Link href="/">
+                <a>Home</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/cards">
+                <a>Cards</a>
+            </Link>
+            </li>
+            <li>
+              <Link href="/numbers">
+                <a>Numbers</a>
+            </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
         <button onClick={lowClick}></button>
         <button onClick={highClick}></button>
       </div>
@@ -58,4 +78,3 @@ const Numbers = () => {
     </div>
   )
 }
-export default Numbers;

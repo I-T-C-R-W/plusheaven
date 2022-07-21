@@ -1,7 +1,7 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
-import styles from "../styles/Home.module.css";
+import Head from 'next/head'
+import Link from 'next/link'
+import styles from '../styles/Home.module.css';
+import { useEffect, useState } from 'react'
 
 
 const suits = ["diamonds", "clubs", "hearts", "spades"];
@@ -14,7 +14,8 @@ for (const s of suits) {
 }
 
 
-const Cards = () =>  {
+export default function Numbers() {
+  
   const [score, setScore] = useState(0);
   const [cards, setCards] = useState([...initCards].sort(() => Math.random() - 0.5));
 
@@ -49,6 +50,27 @@ const Cards = () =>  {
         <link rel="icon" href=""/>
       </Head>
       <div className={styles.body}>
+      <div className={styles.nav}>
+        <div className={styles.nav_links}>
+          <ul>
+            <li>
+              <Link href="/">
+                <a>Home</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/cards">
+                <a>Cards</a>
+            </Link>
+            </li>
+            <li>
+              <Link href="/numbers">
+                <a>Numbers</a>
+            </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
         <form onSubmit={draw}>
           <select value={guess} onChange={(e) => setGuess(e.target.value)}>
             <option>lower</option>
@@ -79,5 +101,3 @@ const Cards = () =>  {
     </div>
   )
 }
-
-export default Cards;
