@@ -1,7 +1,9 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css';
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { providers, Contract } from 'ethers'
+import Web3Modal from 'web3modal'
 
 
 export default function Numbers() {
