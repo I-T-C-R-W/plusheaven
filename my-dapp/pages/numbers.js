@@ -2,9 +2,57 @@ import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css';
 import { useEffect, useState } from 'react'
-import randomNumber from 'random-number-csprng';
+
 
 export default function Numbers() {
+  const [walletConnected, setWalletConnected] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const web3ModalRef = useRef();
+
+  const getProviderOrSigner = async (needSigner = false) => {
+    const provider = await web3ModalRef.current.connect();
+    const web3Provider = new providers.Web3Provider(provider);
+
+    const { chainId } = await web3Provider.getNetwork();
+    if (chainId !== 80001) {
+      window.alert('Change the network to Mumbai');
+      throw new Error('Change network to Mumbai');
+    }
+    
+    if (needSigner) {
+      const signer = web3Provider.getSigner();
+      return signer;
+    }
+    return web3Provider;
+  };
+
+  const connectWallet = async () => {
+    try {
+      await getProviderOrSigner();
+      setWalletConnected(true);
+    } catch (err) {
+      console.error(err)
+    }
+  };
+
+  const renderButton = () => {
+    if (walletConnected) {
+      return (
+        <div className={styles.description}>
+          Ready Playa 1 ?
+        </div>
+      );
+    } else if (loading) {
+      return <button className={styles.button}>Shuffling..</button>
+    } else {
+      return ( 
+        <button onClick={connectWallet} className={styles.button}>
+          Connect your wallet
+        </button>
+      )
+    }
+  }
+
   const [randNum, setRand] = useState(0);
   const [lowNum, setLow] = useState(0);
   const [highNum, setHigh] = useState(0);
@@ -97,6 +145,7 @@ export default function Numbers() {
           </div>
         </div>
         <div className={styles.main}>
+        <div>{renderButton()}</div>
           <div>
             <h3>result:{result}</h3>
             
