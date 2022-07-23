@@ -28,6 +28,42 @@ export default function Home() {
     return web3Provider;
   };
 
+  const connectWallet = async () => {
+    try {
+      await getProviderOrSigner();
+      setWalletConnected(true);
+    } catch (err) {
+      console.error(err)
+    }
+  };
+
+  const renderButton = () => {
+    if (walletConnected) {
+      return (
+        <div className={styles.description}>
+          Ready Playa 1 ?
+        </div>
+      );
+    } else if (loading) {
+      return <button className={styles.button}>Shuffling..</button>
+    } else {
+      <button onClick={connectWallet} className={styles.button}>
+        Connect your wallet homie :)
+      </button>
+    }
+  }
+
+  useEffect(() => {
+    if (!walletConnected) {
+      web3ModalRef.current = new Web3Modal({
+        network: "mumbai",
+        providerOptions: {},
+        disableInjectedProvider: false,
+      });
+      connectWallet();
+    }
+  }, [walletConnected]);
+
 
 
   return (
