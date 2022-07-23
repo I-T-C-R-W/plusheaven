@@ -99,9 +99,7 @@ export default function Numbers() {
         <div className={styles.main}>
           <div>
             <h3>result:{result}</h3>
-            <h3>result:{randNum}</h3>
-            <h3>result:{lowNum}</h3>
-            <h3>result:{highNum}</h3>
+            
 
             
           

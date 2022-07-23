@@ -2,8 +2,34 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
+import { providers, Contract } from 'ethers'
+import Web3Modal from "web3modal"
+import { useEffect, useRef, useState } from 'react'
 
 export default function Home() {
+  const [walletConnected, setWalletConnected] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const web3ModalRef = useRef();
+
+  const getProviderOrSigner = async (needSigner = false) => {
+    const provider = await web3ModalRef.current.connect();
+    const web3Provider = new providers.web3Provider(provider);
+
+    const { chainId } = await web3Provider.getNetwork();
+    if (chainId !== 80001) {
+      window.alert('Change the network to Mumbai');
+      throw new Error('Change network to Mumbai');
+    }
+    
+    if (needSigner) {
+      const signer = web3Provider.getSigner();
+      return signer;
+    }
+    return web3Provider;
+  };
+
+
+
   return (
     <div className={styles.container}>
       <Head>
