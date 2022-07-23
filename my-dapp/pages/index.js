@@ -13,7 +13,7 @@ export default function Home() {
 
   const getProviderOrSigner = async (needSigner = false) => {
     const provider = await web3ModalRef.current.connect();
-    const web3Provider = new providers.web3Provider(provider);
+    const web3Provider = new providers.Web3Provider(provider);
 
     const { chainId } = await web3Provider.getNetwork();
     if (chainId !== 80001) {
@@ -47,9 +47,11 @@ export default function Home() {
     } else if (loading) {
       return <button className={styles.button}>Shuffling..</button>
     } else {
-      <button onClick={connectWallet} className={styles.button}>
-        Connect your wallet homie :)
-      </button>
+      return ( 
+        <button onClick={connectWallet} className={styles.button}>
+          Connect your wallet
+        </button>
+      )
     }
   }
 
@@ -98,6 +100,8 @@ export default function Home() {
       <div>
         <h1>Welcome to Plusheaven</h1>
       </div>
+      <div>{renderButton()}</div>
+      
     </div>   
       
 
