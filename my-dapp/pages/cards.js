@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 import styles from '../styles/Home.module.css';
 import { useEffect, useState } from 'react'
 
@@ -81,7 +82,7 @@ export default function Numbers() {
         <p>score: {score}</p>
         <p>last drawn card</p>
           {drawnCards[drawnCards.length - 2] && (
-            <Image
+            <img
               alt="last drawn card"
               src={`https://tekeye.uk/playing_cards/images/svg_playing_cards/fronts/${
               drawnCards[drawnCards.length - 2]
@@ -90,7 +91,7 @@ export default function Numbers() {
           )}
         <p>currently drawrn card</p>
           {drawnCards[drawnCards.length - 1] && (
-            <Image
+            <img
               alt="currently drawn card"
               src={`https://tekeye.uk/playing_cards/images/svg_playing_cards/fronts/${
               drawnCards[drawnCards.length - 1]
