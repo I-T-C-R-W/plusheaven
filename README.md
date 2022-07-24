@@ -3,11 +3,12 @@ HACK FS 22 - Project
 
 Creators: 
 >
->I-T-C-R-W   • Collaborator  /
+
 >AdedamolaXL • Collaborator  /
 >WillDera    • Collaborator  /
->oleynsve    • Collaborator  /
+>I-T-C-R-W   • Collaborator  /
 >Bleyle823   • Collaborator  /
+>oleynsve    • Collaborator  /
 
 Proof Of Concept
 
@@ -36,4 +37,4 @@ Easy to use
 - simple beting interface 
 - safe transations
 - tranparent by design
-
+- secure in payouts
