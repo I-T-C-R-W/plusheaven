@@ -1,4 +1,4 @@
-# plusheaven.eth
+# plusheaven.eth Dapp
 HACK FS 22 - Project
 
 Creators: 
