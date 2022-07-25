@@ -1,34 +1,34 @@
-# plusheaven.eth
-HACK FS 22 - Project
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-Creators: 
->
->I-T-C-R-W   • Collaborator  /
->AdedamolaXL • Collaborator  /
->WillDera    • Collaborator  /
->oleynsve    • Collaborator  /
->Bleyle823   • Collaborator  /
+## Getting Started
 
-Proof Of Concept
+First, run the development server:
 
-WEB 3 CASINO GAME
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-Why is a decentralized game better than a centralized one?
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-A lot of countries don’t allow gambling. Using the blockchain, you close the risks. The money from your card goes to buy cryptocurrencies, but where it goes next is no longer tracked. 
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The problem that our project solves?
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-Purity and transparency
-- All betting information is stored on the smart contract 
-- We do not hide the financial situation of our application. Players can make sure that we can pay out winnings for them by looking at our smart contract
-- Also, anyone can view transactions and payments to other players
-- In traditional online casinos, most of the in-game information is hidden from the user. Consequently, the results are not immune from manipulation. We ensure transparency of transactions, winnings, and the course of the game.
-Blockchain makes the entire gameplay and algorithms transparent: transactions and actions of both the player and the casino are displayed on the blockchain.
+## Learn More
 
-Rapidity
-- Fast transactions - fast money withdrawal. There are no limits. We do not collect any interest for the withdrawal of funds (you can verify by looking at the smart contract)
+To learn more about Next.js, take a look at the following resources:
 
-Easy to use
-- No need to pass verification and submit your documents
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
