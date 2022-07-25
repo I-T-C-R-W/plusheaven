@@ -19,11 +19,7 @@
     "web3modal": "^1.9.8"
   },
   "devDependencies": {
-<<<<<<< HEAD
-    "eslint": "8.20.0",
-    "eslint-config-next": "12.2.2",
-    "tailwindcss": "^3.1.6"
-=======
+
     "autoprefixer": "^10.3.4",
     "classnames": "2.3.1",
     "eslint": "7.32.0",
@@ -34,6 +30,6 @@
     "postcss-hover-media-feature": "1.0.1",
     "postcss-preset-env": "6.7.0",
     "tailwindcss": "^2.2.15"
->>>>>>> 14b5004233853531cefb2707068d0a6bcae26efd
+
   }
 }
