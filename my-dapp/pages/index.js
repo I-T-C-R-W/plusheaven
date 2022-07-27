@@ -1,9 +1,9 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
-import { providers, Contract } from 'ethers'
-import Web3Modal from "web3modal"
-import { useEffect, useRef, useState } from 'react'
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+import { providers, Contract } from "ethers";
+import Web3Modal from "web3modal";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const [walletConnected, setWalletConnected] = useState(false);
@@ -16,10 +16,10 @@ export default function Home() {
 
     const { chainId } = await web3Provider.getNetwork();
     if (chainId !== 80001) {
-      window.alert('Change the network to Mumbai');
-      throw new Error('Change network to Mumbai');
+      window.alert("Change the network to Mumbai");
+      throw new Error("Change network to Mumbai");
     }
-    
+
     if (needSigner) {
       const signer = web3Provider.getSigner();
       return signer;
@@ -32,27 +32,26 @@ export default function Home() {
       await getProviderOrSigner();
       setWalletConnected(true);
     } catch (err) {
-      console.error(err)
+      console.error(err);
     }
   };
 
   const renderButton = () => {
     if (walletConnected) {
-      return (
-        <div className={styles.description}>
-          Ready Playa 1 ?
-        </div>
-      );
+      return <div className={styles.description}>Ready Playa 1 ?</div>;
     } else if (loading) {
-      return <button className={styles.button}>Shuffling..</button>
+      return <button className={styles.button}>Shuffling..</button>;
     } else {
-      return ( 
-        <button onClick={connectWallet} className= "inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-black hover:bg-white mt-4 lg:mt-0">
+      return (
+        <button
+          onClick={connectWallet}
+          className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-black hover:bg-white mt-4 lg:mt-0"
+        >
           Connect your wallet
         </button>
-      )
+      );
     }
-  }
+  };
 
   useEffect(() => {
     if (!walletConnected) {
@@ -65,8 +64,6 @@ export default function Home() {
     }
   }, [walletConnected]);
 
-
-
   return (
     <div className="p-0">
       <Head>
@@ -75,36 +72,32 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="p-0">
-      <div className= "p-0">
         <div className="p-0">
-          <ul>
-            <li>
-              <Link href="/">
-                <a>Home</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/cards">
-                <a>Cards</a>
-            </Link>
-            </li>
-            <li>
-              <Link href="/numbers">
-                <a>Numbers</a>
-            </Link>
-            </li>
-          </ul>
+          <div className="p-0">
+            <ul>
+              <li>
+                <Link href="/">
+                  <a>Home</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/cards">
+                  <a>Cards</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/numbers">
+                  <a>Numbers</a>
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
+        <div>
+          <h1>Welcome to Plusheaven</h1>
+        </div>
+        <div>{renderButton()}</div>
       </div>
-      <div>
-        <h1>Welcome to Plusheaven</h1>
-      </div>
-      <div>{renderButton()}</div>
-      
-    </div>   
-      
-
-      
     </div>
-  )
+  );
 }

@@ -26,21 +26,29 @@ export default function Header() {
           </Link>
         </div>
         <div class=" ml-9 text-sm lg:flex-grow">
-      <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-        Home
-      </a>
-      <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-        Cards
-      </a>
-      <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
-        Numbers
-      </a>
-    </div>
+          <a
+            href="#responsive-header"
+            class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+          >
+            Home
+          </a>
+          <a
+            href="#responsive-header"
+            class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+          >
+            Cards
+          </a>
+          <a
+            href="#responsive-header"
+            class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white"
+          >
+            Numbers
+          </a>
+        </div>
         <button
           className=" items-center block px-3 py-2 text-white  border border-white rounded-full shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out md:hidden"
           onClick={() => setMobileMenuIsOpen(!mobileMenuIsOpen)}
-        >
-        </button>
+        ></button>
 
         <ul
           className={cn(
@@ -48,12 +56,15 @@ export default function Header() {
             mobileMenuIsOpen ? `block` : `hidden`
           )}
         >
-          {[
-            { title: "Connect Wallet", route: "/" },
-          ].map(({ route, title }) => (
+          {[{ title: "Connect Wallet", route: "/" }].map(({ route, title }) => (
             <li className="mt-3 md:mt-0 md:ml-6" key={title}>
               <Link href={route}>
-                <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-black hover:bg-white mt-4 lg:mt-0">{title}</a>
+                <a
+                  href="#"
+                  class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-black hover:bg-white mt-4 lg:mt-0"
+                >
+                  {title}
+                </a>
               </Link>
             </li>
           ))}
