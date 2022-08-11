@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  target: "serverless",
-};
+  swcMinify: true,
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig
