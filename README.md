@@ -1,3 +1,9 @@
+Comment Years later :  
+This was just a proof of a possible concept.
+We have never implemented this in the real world for real money -
+due to moral & possible legal conflicts .
+
+
 # plusheaven.eth Dapp
 HACK FS 22 - Project
 
